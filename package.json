@@ -2,8 +2,9 @@
     "name": "namastejs",
     "version": "1.0.0",
     "description": "react",
-    "main": "App.js",
     "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
         "test": "jest"
     },
     "repository": {
