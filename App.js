@@ -9,6 +9,10 @@ const parent = React.createElement(
     ])
 );
 
+// jsx syntax
+
+const head2 = < h1 id = "heading" > Helllo from JSX < /h1>;
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(head2);
