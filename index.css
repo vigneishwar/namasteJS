@@ -1,3 +1,22 @@
-#heading {
-    color: rgb(244, 16, 16);
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 200px;
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.nav-icons {
+  margin-right: 8px;
 }

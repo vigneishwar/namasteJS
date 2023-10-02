@@ -1,18 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import logo from './images/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHouse,
+  faRightToBracket,
+  faCartShopping,
+  faGlobe,
+} from '@fortawesome/free-solid-svg-icons';
 
-// const parent = React.createElement(
-//     "div", { id: "parent" },
-//     React.createElement("div", { id: "child" }, [
-//         React.createElement("h1", {}, "I am a h1 tag"),
-//         React.createElement("h2", {}, "Im a h2 tage"),
-//     ])
-// );
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src={logo} alt="Logo" />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>
+            <FontAwesomeIcon className="nav-icons" icon={faHouse} />
+            Home
+          </li>
+          <li>
+            <FontAwesomeIcon className="nav-icons" icon={faRightToBracket} />
+            Log IN
+          </li>
+          <li>
+            <FontAwesomeIcon className="nav-icons" icon={faCartShopping} />
+            Cart
+          </li>
+          <li>
+            <FontAwesomeIcon className="nav-icons" icon={faGlobe} />
+            Region
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-// jsx syntax
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+    </div>
+  );
+};
 
-const head2 = < h1 id = "heading" > Helllo from JSX < /h1>;
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(head2);
+root.render(<AppLayout />);
