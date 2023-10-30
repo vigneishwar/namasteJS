@@ -41,7 +41,7 @@ const Header = () => {
 
 const RestaurantCard = (props) => {
   const {resData} = props;
-  const restaurant = resData.restaurants[0];
+  const {info} = resData;
 
   const {
     name, 
@@ -51,7 +51,7 @@ const RestaurantCard = (props) => {
     totalRatingsString, 
     areaName, 
     cloudinaryImageId
-  } = restaurant?.info;
+  } = info;
   return (
     <div className="res-card">
       <img className ="res-logo" alt="res-logo" src={
@@ -2219,7 +2219,9 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard resData = {restaurantLists}/>
+        {restaurantLists.restaurants.map((restaurant) => (
+          <RestaurantCard resData={restaurant} />
+        ))}
       </div>
     </div>
   );
