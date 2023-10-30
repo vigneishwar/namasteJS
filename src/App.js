@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import logo from './images/logo.png';
+import logo from '../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouse,
@@ -50,7 +50,7 @@ const RestaurantCard = (props) => {
     avgRating, 
     totalRatingsString, 
     areaName, 
-    cloudinaryImageId
+    cloudinaryImageId,
   } = info;
   return (
     <div className="res-card">
@@ -62,7 +62,7 @@ const RestaurantCard = (props) => {
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
       <h4>{costForTwo}</h4>
-      <h4>{avgRating} out of {totalRatingsString}</h4>
+      <h4>{avgRating} out of {totalRatingsString} reviews</h4>
       <h4>{areaName}</h4>
     </div>
   );
