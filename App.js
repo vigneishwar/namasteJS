@@ -42,22 +42,35 @@ const Header = () => {
 const RestaurantCard = (props) => {
   const {resData} = props;
   const restaurant = resData.restaurants[0];
+
+  const {
+    name, 
+    cuisines, 
+    costForTwo, 
+    avgRating, 
+    totalRatingsString, 
+    areaName, 
+    cloudinaryImageId
+  } = restaurant?.info;
   return (
     <div className="res-card">
       <img className ="res-logo" alt="res-logo" src={
         "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" 
-      + restaurant.info.cloudinaryImageId 
+      + cloudinaryImageId 
     } 
       />
-      <h3>{restaurant.info.name}</h3>
-      <h4>{restaurant.info.cuisines.join(", ")}</h4>
-      <h4>{restaurant.info.costForTwo}</h4>
-      <h4>{restaurant.info.avgRating} out of {restaurant.info.totalRatingsString}</h4>
-      <h4>{restaurant.info.areaName}</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{costForTwo}</h4>
+      <h4>{avgRating} out of {totalRatingsString}</h4>
+      <h4>{areaName}</h4>
     </div>
   );
 };
-const resObj = {
+
+// restaurant list api data
+
+const restaurantLists = {
   restaurants: [
     {
       "info": {
@@ -2206,7 +2219,7 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard resData = {resObj}/>
+        <RestaurantCard resData = {restaurantLists}/>
       </div>
     </div>
   );
