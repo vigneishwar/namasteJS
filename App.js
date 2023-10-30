@@ -23,7 +23,7 @@ const Header = () => {
           </li>
           <li>
             <FontAwesomeIcon className="nav-icons" icon={faRightToBracket} />
-            Log IN
+            Login
           </li>
           <li>
             <FontAwesomeIcon className="nav-icons" icon={faCartShopping} />
@@ -2219,8 +2219,8 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        {restaurantLists.restaurants.map((restaurant) => (
-          <RestaurantCard resData={restaurant} />
+        {restaurantLists.restaurants.map((restaurant, index) => (
+          <RestaurantCard key = {index} resData={restaurant} />
         ))}
       </div>
     </div>
