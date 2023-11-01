@@ -54,7 +54,9 @@
   width: 100%;
 }
 
-.search {
+.filter-btn {
   padding: 10px;
   background-color: #e8f6f3;
+  cursor: pointer;
+  margin: 10px;
 }
