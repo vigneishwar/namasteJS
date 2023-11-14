@@ -1,10 +1,18 @@
 import RestaurantCard from "./RestaurantCard";
 import restaurantLists from "../../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = () => {
 
   const [listOfRestaurants, setListOfRestaurants] = useState(restaurantLists);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    
+  }
     return (
       <div className="body">
         <div className="filter">
