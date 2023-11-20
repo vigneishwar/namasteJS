@@ -60,3 +60,32 @@
   cursor: pointer;
   margin: 10px;
 }
+
+/* Shimmer container setup for a grid layout */
+.shimmer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates a grid with columns at least 200px wide */
+  gap: 15px; /* Spacing between cards */
+  padding: 15px; /* Padding around the entire grid */
+}
+
+/* Shimmer card setup to match the restaurant cards */
+.shimmer-cards {
+  height: 300px; /* Set the height to match your restaurant cards */
+  margin-bottom: 15px; /* Space at the bottom of each card */
+  background-color: #f0f0f0; /* Light grey background to match the shimmer effect */
+  background-image: linear-gradient(to right, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%); /* Gradient for the shimmer effect */
+  background-repeat: no-repeat;
+  background-size: 200% 100%; /* Size of the gradient background */
+  animation: shimmer 1.5s infinite linear; /* Animation for the shimmer effect */
+}
+
+/* Keyframe animation for the shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0; /* Start position of the gradient background */
+  }
+  100% {
+    background-position: 200px 0; /* End position, creates the moving shimmer effect */
+  }
+}
