@@ -21,10 +21,10 @@ const Body = () => {
     setListOfRestaurants(restaurantData);
   }; 
 
-  if (listOfRestaurants?.length === 0) {
-    return <Shimmer />;
-  }
-    return (
+  // if (listOfRestaurants?.length === 0) {
+  //   return <Shimmer />;
+  // }
+    return listOfRestaurants?.length === 0 ? <Shimmer /> : (
       <div className="body">
         <div className="filter">
         <button className="filter-btn" 
