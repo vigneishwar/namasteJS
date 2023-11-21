@@ -30,7 +30,7 @@ const Body = () => {
     setIsLoading(true); // Set loading state to prevent multiple calls
     try {
       const response = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?page=${page}&lat=13.0849557&lng=80.2101342&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
+        `https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?page=${page}&lat=13.0849557&lng=80.2101342&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
       );
        // checking for the response.
       // returns error if there is http error
@@ -73,7 +73,7 @@ const Body = () => {
         <button className="filter-btn"
           onClick={() => {
             const filteredLists = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.3
+              (res) => res.info.avgRating > 4.5
             );
             setListOfRestaurants(filteredLists);
           }}
