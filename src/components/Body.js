@@ -7,11 +7,15 @@ const Body = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(0); // to track which page of data to load
 
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   fetchData(); // Initial fetch
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    fetchData(); // Initial fetch
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    fetchData(); // Fetch data on initial render
+  }, []); // Effect to run only once
 
   useEffect(() => {
     if (!isLoading) fetchData(); // Fetch more data when isLoading is false
@@ -50,7 +54,7 @@ const Body = () => {
       }
       if (restaurantData) {
         setListOfRestaurants(prev => [...prev, ...restaurantData]);
-        setPage(prevPage => prevPage + 1); // Increment page number for next API call
+        // setPage(prevPage => prevPage + 1); // Increment page number for next API call
       } else {
         console.log("Data not found");
       }
@@ -61,11 +65,15 @@ const Body = () => {
     }
   };
 
-  const handleScroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight && !isLoading) {
-      setPage(prevPage => prevPage + 1); // Update page state to trigger useEffect
-    }
-  };
+  // const handleScroll = () => {
+  //   if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight && !isLoading) {
+  //     setPage(prevPage => prevPage + 1); // Update page state to trigger useEffect
+  //   }
+  // };
+
+  const handleLoadMore = () => {
+    setPage(prevPage => prevPage + 1); // Update page state to trigger useEffect
+  }
 
   return (
     <div className="body">
@@ -87,6 +95,9 @@ const Body = () => {
         ))}
         {isLoading && <Shimmer />}
       </div>
+      <button className="load-more-btn" onClick={handleLoadMore} disabled={isLoading}>
+        {isLoading ? "Loading..." : "Load More"}
+      </button>
     </div>
   );
 };

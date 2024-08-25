@@ -91,3 +91,22 @@
     background-position: 200px 0; /* End position, creates the moving shimmer effect */
   }
 }
+
+
+/* Load More button styles */
+.load-more-btn {
+  display: block;
+  margin: 20px auto; /* Center the button horizontally */
+  padding: 10px 20px; /* Add some padding for better appearance */
+  font-size: 16px; /* Increase font size */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.load-more-btn:disabled {
+  background-color: #cccccc; /* Disabled button background color */
+  cursor: not-allowed; /* Not-allowed cursor on hover */
+}
